@@ -16,7 +16,7 @@ function Home() {
   ];
 
   return (
-    <div className="p-4 space-y-3">
+    <div className="grid sm:grid-cols-2 gap-3 p-4">
       {items.map(([title, icon, bg]) => (
         <div key={title} className={`p-4 ${bg} rounded-lg space-x-3 cursor-pointer`}>
           <Icon name={icon} />
