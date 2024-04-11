@@ -16,11 +16,11 @@ function Home() {
   ];
 
   return (
-    <div className="p-3 space-y-3">
+    <div className="p-4 space-y-3">
       {items.map(([title, icon, bg]) => (
-        <div key={title} className={`p-3.5 ${bg} rounded-lg space-x-2 cursor-pointer`}>
+        <div key={title} className={`p-4 ${bg} rounded-lg space-x-3 cursor-pointer`}>
           <Icon name={icon} />
-          <span className="text-xl text-white align-middle">{title}</span>
+          <span className="text-xl align-middle">{title}</span>
         </div>
       ))}
     </div>
