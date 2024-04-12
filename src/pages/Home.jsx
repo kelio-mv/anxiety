@@ -17,7 +17,7 @@ function Home() {
   ];
 
   return (
-    <div className="grid sm:grid-cols-2 gap-3 p-4">
+    <div className="grid sm:grid-cols-2 gap-3">
       {items.map(([title, icon, bg, to]) => (
         <Link className={`p-4 ${bg} rounded-lg space-x-3`} key={title} to={to}>
           <Icon name={icon} />

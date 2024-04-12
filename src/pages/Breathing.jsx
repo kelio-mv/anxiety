@@ -2,13 +2,13 @@ import Icon from "../components/Icon";
 
 function Breathing() {
   return (
-    <div className="flex flex-col gap-4 min-h-full p-4">
-      <div>
+    <div className="flex flex-col gap-4 min-h-full">
+      <div className="space-x-3">
         <Icon name="air" />
-        <span className="ml-3 text-2xl align-middle">Respiração</span>
+        <span className="text-2xl align-middle">Respiração</span>
       </div>
       <hr />
-      <div className="space-y-4 max-w-[40rem]">
+      <div className=" max-w-[40rem] space-y-4">
         <p>
           Uma das principais formas de aliviar a ansiedade é através da respiração diafragmática.
         </p>
