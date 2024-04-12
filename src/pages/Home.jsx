@@ -1,5 +1,5 @@
-import Icon from "../components/Icon";
 import { Link } from "react-router-dom";
+import Icon from "../components/Icon";
 
 function Home() {
   const items = [
@@ -19,7 +19,7 @@ function Home() {
   return (
     <div className="grid sm:grid-cols-2 gap-3 p-4">
       {items.map(([title, icon, bg, to]) => (
-        <Link className={`p-4 ${bg} rounded-lg space-x-3 cursor-pointer`} key={title} to={to}>
+        <Link className={`p-4 ${bg} rounded-lg space-x-3`} key={title} to={to}>
           <Icon name={icon} />
           <span className="text-xl align-middle">{title}</span>
         </Link>
