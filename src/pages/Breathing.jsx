@@ -8,13 +8,17 @@ function Breathing() {
         <span className="ml-3 text-2xl align-middle">Respiração</span>
       </div>
       <hr />
-      <p>Uma das principais formas de aliviar a ansiedade é através da respiração diafragmática.</p>
-      <p>
-        Sente-se em uma posição confortável e acompanhe o movimento da bola, inspirando
-        profundamente pelo nariz enquanto ela se enche e expirando lentamente pela boca enquanto ela
-        se seca.
-      </p>
-      <p> Repita o processo quantas vezes for necessário, até sentir o alívio dos sintomas.</p>
+      <div className="space-y-4 max-w-[40rem]">
+        <p>
+          Uma das principais formas de aliviar a ansiedade é através da respiração diafragmática.
+        </p>
+        <p>
+          Sente-se em uma posição confortável e acompanhe o movimento da bola, inspirando
+          profundamente pelo nariz enquanto ela se enche e expirando lentamente pela boca enquanto
+          ela se seca.
+        </p>
+        <p> Repita o processo quantas vezes for necessário, até sentir o alívio dos sintomas.</p>
+      </div>
 
       <div className="flex justify-center items-center grow">
         <div className="flex justify-center items-center w-64 h-64 border-[6px] border-[#808388] rounded-full">
