@@ -21,7 +21,6 @@ function Exercise() {
   }
 
   function decreaseTime() {
-    // parar intervalo aqui
     setTime(Math.max(time - 60, 0));
   }
 
@@ -64,6 +63,7 @@ function Exercise() {
           <button
             className="px-[7px] bg-gray-800 border border-gray-700 text-2xl"
             onClick={decreaseTime}
+            disabled={timerRunning || time === 0}
           >
             <Icon name="remove" />
           </button>
@@ -73,11 +73,12 @@ function Exercise() {
           <button
             className="px-[7px] bg-gray-800 border border-gray-700 text-2xl"
             onClick={increaseTime}
+            disabled={timerRunning || time === 3600}
           >
             <Icon name="add" />
           </button>
           <button
-            className="col-span-3 py-2 bg-sky-800 disabled:opacity-50"
+            className="col-span-3 py-2 bg-sky-800"
             onClick={timerRunning ? stopTimer : startTimer}
             disabled={time === 0}
           >

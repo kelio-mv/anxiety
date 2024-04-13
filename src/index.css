@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  button {
+    @apply disabled:opacity-50;
+  }
+}
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
