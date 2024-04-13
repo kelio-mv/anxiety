@@ -14,8 +14,8 @@ export default {
     },
     keyframes: {
       breathing: {
-        "28.5%, 35.7%": { transform: "scale(2)", opacity: "100%" },
-        "92.8%": { transform: "none", opacity: "50%" },
+        "28.5%, 35.7%": { transform: "scale(2)" },
+        "92.8%": { transform: "none" },
       },
     },
     extend: {},
