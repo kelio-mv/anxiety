@@ -1,17 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Page from "../components/Page";
 import Icon from "../components/Icon";
 
 function Exercise() {
-  const [totalTime, setTotalTime] = useState(10);
-  const [remainingTime, setRemainingTime] = useState(null);
-  const startTime = useRef(null);
+  const [time, setTime] = useState(1800);
+  const [timerRunning, setTimerRunning] = useState(false);
   const intervalRef = useRef(null);
-  const displayedTime = remainingTime || totalTime;
 
-  function now() {
-    return Date.now() / 1000;
-  }
+  useEffect(() => () => stopTimer, []);
 
   function formatTime(seconds) {
     const f = (n) => ("0" + n).slice(-2);
@@ -21,39 +17,30 @@ function Exercise() {
   }
 
   function increaseTime() {
-    if (totalTime < 3540) {
-      setTotalTime(totalTime + 60);
-    }
+    setTime(Math.min(time + 60, 3600));
   }
 
   function decreaseTime() {
-    if (totalTime > 60) {
-      setTotalTime(totalTime - 60);
-    }
+    // parar intervalo aqui
+    setTime(Math.max(time - 60, 0));
   }
 
-  function start() {
-    function update() {
-      const elapsedTime = now() - startTime.current;
-      const remainingTime = totalTime - elapsedTime;
-
-      if (remainingTime >= 0) {
-        setRemainingTime(totalTime - elapsedTime);
-      } else {
-        clearInterval(intervalRef.current);
-        startTime.current = null;
-        setRemainingTime(null);
-      }
-    }
-    startTime.current = now();
-    intervalRef.current = setInterval(update, 100);
+  function startTimer() {
+    intervalRef.current = setInterval(() => {
+      setTime((prevTime) => {
+        if (prevTime === 0) {
+          stopTimer();
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+    setTimerRunning(true);
   }
 
-  function pause() {
+  function stopTimer() {
     clearInterval(intervalRef.current);
-    startTime.current = null;
-    setRemainingTime(null);
-    setTotalTime(remainingTime);
+    setTimerRunning(false);
   }
 
   return (
@@ -81,7 +68,7 @@ function Exercise() {
             <Icon name="remove" />
           </button>
           <div className="px-2.5 py-1 bg-gray-900 border border-gray-800 font-mono text-2xl">
-            {formatTime(displayedTime)}
+            {formatTime(time)}
           </div>
           <button
             className="px-[7px] bg-gray-800 border border-gray-700 text-2xl"
@@ -89,8 +76,12 @@ function Exercise() {
           >
             <Icon name="add" />
           </button>
-          <button className="col-span-3 py-2 bg-sky-800" onClick={remainingTime ? pause : start}>
-            <Icon name={remainingTime ? "pause" : "play_arrow"} />
+          <button
+            className="col-span-3 py-2 bg-sky-800 disabled:opacity-50"
+            onClick={timerRunning ? stopTimer : startTimer}
+            disabled={time === 0}
+          >
+            <Icon name={timerRunning ? "pause" : "play_arrow"} />
           </button>
         </div>
       </div>
