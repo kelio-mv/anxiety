@@ -1,18 +1,11 @@
+import Page from "../components/Page";
 import { Fragment } from "react";
-import Icon from "../components/Icon";
 
 function Technique54321() {
   const senseVerbs = ["ver", "ouvir", "tocar", "cheirar", "saborear"];
 
   return (
-    <div className="space-y-4">
-      <div className="space-x-3">
-        <Icon name="relax" />
-        <span className="text-2xl align-middle">5-4-3-2-1</span>
-      </div>
-
-      <hr />
-
+    <Page title="5-4-3-2-1" icon="relax">
       <div className="max-w-[40rem] space-y-4">
         <p>
           Esta é uma técnica usada para atenção plena, com o objetivo de trazer a mente para o
@@ -43,7 +36,7 @@ function Technique54321() {
           );
         })}
       </div>
-    </div>
+    </Page>
   );
 }
 

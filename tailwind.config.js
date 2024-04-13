@@ -6,6 +6,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Gantari", ...defaultTheme.fontFamily.sans],
+      mono: [...defaultTheme.fontFamily.mono],
     },
     fontSize: {
       base: ["1rem", "1.375rem"],
