@@ -19,7 +19,7 @@ function Technique54321() {
           presente, já que na ansiedade a mente é “sequestrada” para o futuro.
         </p>
 
-        <p>Olhe à sua volta e escreva:</p>
+        <p>Para praticá-la, olhe à sua volta e liste:</p>
 
         {senseVerbs.map((verb, i) => {
           const quantity = senseVerbs.length - i;
@@ -28,7 +28,7 @@ function Technique54321() {
 
           return (
             <Fragment key={i}>
-              <p>{`${quantity} coisa${suffix} que você pode ${verb}`}</p>
+              <p>{`• ${quantity} coisa${suffix} que você pode ${verb}`}</p>
 
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {array.map((_, j) => (
