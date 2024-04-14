@@ -5,9 +5,14 @@ import Icon from "../components/Icon";
 function Exercise() {
   const [time, setTime] = useState(1800);
   const [timerRunning, setTimerRunning] = useState(false);
+  const lastUpdateTimeRef = useRef(null);
   const intervalRef = useRef(null);
 
   useEffect(() => stopTimer, []);
+
+  function now() {
+    return Date.now() / 1000;
+  }
 
   function formatTime(seconds) {
     const f = (n) => ("0" + n).slice(-2);
@@ -25,12 +30,18 @@ function Exercise() {
   }
 
   function startTimer() {
+    lastUpdateTimeRef.current = now();
     intervalRef.current = setInterval(() => {
+      const deltaTime = now() - lastUpdateTimeRef.current;
+      lastUpdateTimeRef.current = now();
       setTime((prevTime) => {
-        if (prevTime === 0) stopTimer();
-        return Math.max(prevTime - 1, 0);
+        if (prevTime - deltaTime <= 0) {
+          stopTimer();
+          return 0;
+        }
+        return prevTime - deltaTime;
       });
-    }, 1000);
+    });
     setTimerRunning(true);
   }
 
