@@ -2,8 +2,6 @@ import { useRef, useState, useEffect } from "react";
 import Page from "../components/Page";
 import Icon from "../components/Icon";
 
-const alarmSound = new Audio("alarm.mp3");
-
 function Exercise() {
   const [time, setTime] = useState(5);
   const [timerRunning, setTimerRunning] = useState(false);
@@ -39,6 +37,8 @@ function Exercise() {
       setTime((prevTime) => {
         if (prevTime - deltaTime <= 0) {
           stopTimer();
+          console.log("just making tests");
+          const alarmSound = new Audio("alarm.mp3");
           alarmSound.play();
           return 0;
         }
