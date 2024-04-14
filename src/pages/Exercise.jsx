@@ -2,10 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import Page from "../components/Page";
 import Icon from "../components/Icon";
 
-const alarmSound = new Audio("./alarm.mp3");
+const alarmSound = new Audio("/alarm.mp3");
 
 function Exercise() {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(1800);
   const [timerRunning, setTimerRunning] = useState(false);
   const lastUpdateTimeRef = useRef(null);
   const intervalRef = useRef(null);
@@ -38,7 +38,6 @@ function Exercise() {
       lastUpdateTimeRef.current = now();
       setTime((prevTime) => {
         if (prevTime - deltaTime <= 0) {
-          console.log("last test");
           stopTimer();
           alarmSound.play();
           return 0;
