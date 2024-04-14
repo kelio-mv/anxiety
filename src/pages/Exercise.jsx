@@ -7,7 +7,7 @@ function Exercise() {
   const [timerRunning, setTimerRunning] = useState(false);
   const intervalRef = useRef(null);
 
-  useEffect(() => () => stopTimer, []);
+  useEffect(() => stopTimer, []);
 
   function formatTime(seconds) {
     const f = (n) => ("0" + n).slice(-2);
@@ -27,11 +27,8 @@ function Exercise() {
   function startTimer() {
     intervalRef.current = setInterval(() => {
       setTime((prevTime) => {
-        if (prevTime === 0) {
-          stopTimer();
-          return 0;
-        }
-        return prevTime - 1;
+        if (prevTime === 0) stopTimer();
+        return Math.max(prevTime - 1, 0);
       });
     }, 1000);
     setTimerRunning(true);
