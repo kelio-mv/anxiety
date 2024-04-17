@@ -45,14 +45,9 @@ function Agenda() {
         </div>
 
         {tasks.map((task, index) => (
-          <div
-            className="flex items-center gap-2 pt-1.5 pr-0.5 border-t border-gray-800"
-            key={index}
-          >
+          <div className="flex items-center gap-2 pt-1.5 border-t border-gray-800" key={index}>
             <span className="grow overflow-hidden text-ellipsis">{task}</span>
-            <button className="p-0.5 bg-red-800 rounded" onClick={() => handleRemoveTask(index)}>
-              <Icon name="close" />
-            </button>
+            <Icon name="close" onClick={() => handleRemoveTask(index)} />
           </div>
         ))}
       </div>

@@ -1,19 +1,81 @@
+import { useEffect, useRef } from "react";
 import Page from "../components/Page";
+import Icon from "../components/Icon";
+import useStorage from "../useStorage";
 
 function Diary() {
+  const [notes, setNotes] = useStorage("notes", []);
+  const today = new Date().toLocaleDateString("pt-BR");
+
+  function createNote() {
+    setNotes([{ date: today, content: "" }, ...notes]);
+  }
+
+  function editNote(date, content) {
+    setNotes(notes.map((note) => (note.date === date ? { ...note, content } : note)));
+  }
+
+  function deleteNote(date) {
+    setNotes(notes.filter((note) => note.date !== date));
+  }
+
   return (
     <Page title="Diário" icon="sticky_note_2">
       <div className="max-w-[40rem] space-y-4">
         <p>
-          Escrever em um diário pode ter benefícios terapêuticos pois ajuda a encontrar padrões de
+          Escrever em um diário pode ter efeitos terapêuticos pois ajuda a encontrar padrões de
           pensamento e de comportamento que contribuem para a ansiedade.
         </p>
         <p>
-          Escreva sobre os momentos em que ficou ansioso, quais gatilhos despertaram esse sentimento
+          Escreva sobre os momentos em que ficou ansioso, quais gatilhos despertaram este sentimento
           e expresse como se sentiu sem medo de julgamentos.
         </p>
+
+        {!notes.some(({ date }) => date === today) && (
+          <button
+            className="px-2 py-1.5 space-x-0.5 bg-sky-800 border border-sky-700"
+            onClick={createNote}
+          >
+            <Icon name="add" />
+            <span className="text-lg align-middle">Nova anotação</span>
+          </button>
+        )}
+
+        {notes.map(({ date, content }) => (
+          <Note key={date} {...{ date, content, editNote, deleteNote }} />
+        ))}
       </div>
     </Page>
+  );
+}
+
+function Note({ date, content, editNote, deleteNote }) {
+  const textareaRef = useRef();
+
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  }, [content]);
+
+  return (
+    <div className="px-2.5 py-1.5 space-y-1.5 border border-gray-800 rounded-lg" key={date}>
+      <div className="flex justify-between">
+        <span className="text-lg">{date}</span>
+        <Icon name="delete" onClick={() => deleteNote(date)} />
+      </div>
+
+      <textarea
+        className="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded overflow-hidden resize-none"
+        ref={textareaRef}
+        placeholder="Escreva aqui..."
+        rows="1"
+        value={content}
+        spellCheck={false}
+        onChange={(e) => editNote(date, e.target.value)}
+        onBlur={() => editNote(date, content.trim())}
+      />
+    </div>
   );
 }
 

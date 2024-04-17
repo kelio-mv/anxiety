@@ -10,6 +10,7 @@ export default {
     },
     fontSize: {
       base: ["1rem", "1.375rem"],
+      lg: ["1.125rem", "1.5rem"],
       xl: ["1.25rem", "1.625rem"],
       "2xl": ["1.5rem", "1.875rem"],
     },

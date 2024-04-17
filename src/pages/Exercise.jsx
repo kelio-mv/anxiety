@@ -89,7 +89,7 @@ function Exercise() {
             <Icon name="add" />
           </button>
           <button
-            className="col-span-3 py-2 bg-sky-800"
+            className="col-span-3 py-[7px] bg-sky-800 border border-sky-700"
             onClick={timerRunning ? stopTimer : startTimer}
             disabled={time === 0}
           >

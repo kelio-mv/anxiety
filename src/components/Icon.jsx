@@ -1,5 +1,12 @@
-function Icon({ name }) {
-  return <span className="material-symbols-rounded align-middle">{name}</span>;
+function Icon({ name, onClick }) {
+  return (
+    <span
+      className={`material-symbols-rounded align-middle ${onClick ? "cursor-pointer" : ""}`}
+      onClick={onClick}
+    >
+      {name}
+    </span>
+  );
 }
 
 export default Icon;
