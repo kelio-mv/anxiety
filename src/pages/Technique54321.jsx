@@ -1,4 +1,5 @@
 import Page from "../components/Page";
+import TextInput from "../components/TextInput";
 import { Fragment } from "react";
 
 function Technique54321() {
@@ -25,11 +26,7 @@ function Technique54321() {
 
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {array.map((_, j) => (
-                  <input
-                    type="text"
-                    className="px-2 py-1 bg-gray-800 border border-gray-700 rounded"
-                    key={j}
-                  />
+                  <TextInput key={j} />
                 ))}
               </div>
             </Fragment>

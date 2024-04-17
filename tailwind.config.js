@@ -4,10 +4,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Gantari", ...defaultTheme.fontFamily.sans],
-      mono: [...defaultTheme.fontFamily.mono],
-    },
     fontSize: {
       base: ["1rem", "1.375rem"],
       lg: ["1.125rem", "1.5rem"],
@@ -20,7 +16,11 @@ export default {
         "92.8%": { transform: "none" },
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Gantari", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [],
 };

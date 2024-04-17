@@ -72,24 +72,24 @@ function Exercise() {
       <div className="flex-center grow">
         <div className="grid gap-2">
           <button
-            className="px-[7px] bg-gray-800 border border-gray-700 text-2xl"
+            className="p-2 bg-gray-900 border border-gray-800 rounded"
             onClick={decreaseTime}
             disabled={timerRunning || time === 0}
           >
             <Icon name="remove" />
           </button>
-          <div className="px-2.5 py-1 bg-gray-900 border border-gray-800 font-mono text-2xl">
+          <div className="px-2.5 py-[5px] bg-gray-900 border border-gray-800 rounded font-mono text-2xl">
             {formatTime(time)}
           </div>
           <button
-            className="px-[7px] bg-gray-800 border border-gray-700 text-2xl"
+            className="p-2 bg-gray-900 border border-gray-800 rounded"
             onClick={increaseTime}
             disabled={timerRunning || time === 3600}
           >
             <Icon name="add" />
           </button>
           <button
-            className="col-span-3 py-[7px] bg-sky-800 border border-sky-700"
+            className="col-span-3 p-2 bg-sky-800 border border-sky-700 rounded"
             onClick={timerRunning ? stopTimer : startTimer}
             disabled={time === 0}
           >

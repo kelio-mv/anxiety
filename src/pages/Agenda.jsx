@@ -2,6 +2,7 @@ import { useState } from "react";
 import useStorage from "../useStorage";
 import Page from "../components/Page";
 import Icon from "../components/Icon";
+import TextInput from "../components/TextInput";
 
 function Agenda() {
   const [task, setTask] = useState("");
@@ -30,24 +31,29 @@ function Agenda() {
 
       <div className="max-w-[30rem] space-y-1.5">
         <div className="flex gap-2">
-          <input
-            type="text"
-            className="grow px-2 py-1 bg-gray-800 border border-gray-700 rounded"
+          <TextInput
+            className="grow"
             placeholder="Nova tarefa..."
             value={task}
             onChange={(e) => setTask(e.target.value)}
             onKeyDown={({ key }) => key === "Enter" && handleAddTask()}
             maxLength={40}
           />
-          <button className="p-1 bg-cyan-800 rounded" onClick={handleAddTask}>
+          <button
+            className="p-[3px] bg-cyan-800 border border-cyan-700 rounded"
+            onClick={handleAddTask}
+          >
             <Icon name="add" />
           </button>
         </div>
 
         {tasks.map((task, index) => (
-          <div className="flex items-center gap-2 pt-1.5 border-t border-gray-800" key={index}>
-            <span className="grow overflow-hidden text-ellipsis">{task}</span>
-            <Icon name="close" onClick={() => handleRemoveTask(index)} />
+          <div
+            className="flex justify-between items-center pt-1.5 border-t border-gray-800"
+            key={index}
+          >
+            <span className="overflow-hidden text-ellipsis">{task}</span>
+            <Icon name="close" small onClick={() => handleRemoveTask(index)} />
           </div>
         ))}
       </div>

@@ -33,11 +33,11 @@ function Diary() {
 
         {!notes.some(({ date }) => date === today) && (
           <button
-            className="px-2 py-1.5 space-x-0.5 bg-sky-800 border border-sky-700"
+            className="px-2 py-1 space-x-1 bg-sky-800 border border-sky-700"
             onClick={createNote}
           >
-            <Icon name="add" />
-            <span className="text-lg align-middle">Nova anotação</span>
+            <Icon name="add" small />
+            <span className="align-middle">Nova anotação</span>
           </button>
         )}
 
@@ -54,19 +54,21 @@ function Note({ date, content, editNote, deleteNote }) {
 
   useEffect(() => {
     const textarea = textareaRef.current;
+    const style = getComputedStyle(textarea);
+    const borderWidth = parseInt(style.borderTopWidth) + parseInt(style.borderBottomWidth);
     textarea.style.height = "auto";
-    textarea.style.height = textarea.scrollHeight + "px";
+    textarea.style.height = textarea.scrollHeight + borderWidth + "px";
   }, [content]);
 
   return (
-    <div className="px-2.5 py-1.5 space-y-1.5 border border-gray-800 rounded-lg" key={date}>
+    <div className="p-2 space-y-2 border border-gray-800 rounded-lg" key={date}>
       <div className="flex justify-between">
         <span className="text-lg">{date}</span>
         <Icon name="delete" onClick={() => deleteNote(date)} />
       </div>
 
       <textarea
-        className="w-full px-2 py-1 bg-gray-800 border border-gray-700 rounded overflow-hidden resize-none"
+        className="block w-full px-[7px] py-1 bg-gray-800 border border-gray-700 rounded resize-none"
         ref={textareaRef}
         placeholder="Escreva aqui..."
         rows="1"
