@@ -19,11 +19,11 @@ function Agenda() {
   }
 
   return (
-    <Page title="Agenda" icon="task_alt">
+    <Page title="Agenda" icon="checklist">
       <div className="max-w-[40rem] space-y-4">
         <p>
-          Organizar as atividades do dia em uma lista de tarefas também ajuda a diminuir o estresse
-          e a ansiedade causada pelas nossas responsabilidades diárias.
+          Organizar as atividades do dia em uma lista também ajuda a diminuir o estresse e a
+          ansiedade. No entanto, tome cuidado para não se cobrar demais.
         </p>
         <p>Anote aqui tudo que você precisa ou deseja fazer:</p>
       </div>

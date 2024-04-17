@@ -5,7 +5,7 @@ function Technique54321() {
   const senseVerbs = ["ver", "ouvir", "tocar", "cheirar", "saborear"];
 
   return (
-    <Page title="5-4-3-2-1" icon="relax">
+    <Page title="5-4-3-2-1" icon="mindfulness">
       <div className="max-w-[40rem] space-y-4">
         <p>
           Esta é uma técnica usada para atenção plena, com o objetivo de trazer a mente para o
