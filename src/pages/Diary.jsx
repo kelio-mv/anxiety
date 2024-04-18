@@ -68,7 +68,7 @@ function Note({ date, content, editNote, deleteNote }) {
       </div>
 
       <textarea
-        className="block w-full px-[7px] py-1 bg-gray-800 border border-gray-700 rounded resize-none"
+        className="block w-full px-[7px] py-1 bg-gray-800 border border-gray-700 rounded overflow-hidden"
         ref={textareaRef}
         placeholder="Escreva aqui..."
         rows="1"

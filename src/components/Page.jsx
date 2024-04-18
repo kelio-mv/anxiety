@@ -7,7 +7,7 @@ function Page({ title, icon, flex, children }) {
         <Icon name={icon} />
         <span className="text-2xl align-middle">{title}</span>
       </div>
-      <hr />
+      <hr className="border-gray-100" />
       {children}
     </div>
   );

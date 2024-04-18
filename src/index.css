@@ -6,6 +6,9 @@
   button {
     @apply disabled:opacity-50;
   }
+  textarea {
+    @apply resize-none;
+  }
 }
 
 @layer utilities {

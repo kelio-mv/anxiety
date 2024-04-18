@@ -35,6 +35,7 @@ function ReadLater() {
       <p className="text-blue-700">
         Adicionar referência:
         https://www.psicologoeterapia.com.br/blog/beneficios-de-escrever-um-diario-para-a-saude-mental/
+        https://www.marceloparazzi.com.br/blog/ansiedade-e-terapia-cognitivo-comportamental-como-a-abordagem-auxilia-no-tratamento/#:~:text=A%20TCC%20permite%20que%20o,rea%C3%A7%C3%B5es%20negativas%2C%20disfuncionais%20ou%20destrutivas.
       </p>
     </>
   );
