@@ -17,13 +17,20 @@ function Home() {
   ];
 
   return (
-    <div className="grid sm:grid-cols-2 gap-3">
-      {items.map(([title, icon, bg, to]) => (
-        <Link className={`p-4 ${bg} rounded-lg space-x-3`} key={title} to={to}>
-          <Icon name={icon} />
-          <span className="text-xl align-middle">{title}</span>
-        </Link>
-      ))}
+    <div className="flex flex-col justify-between min-h-full gap-4">
+      <div className="grid sm:grid-cols-2 gap-3">
+        {items.map(([title, icon, bg, to]) => (
+          <Link className={`p-4 ${bg} rounded-lg space-x-3`} key={title} to={to}>
+            <Icon name={icon} />
+            <span className="text-xl align-middle">{title}</span>
+          </Link>
+        ))}
+      </div>
+      <p className="text-gray-400 text-center">
+        Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida.
+        Em caso de crise, ligue para 188 (CVV) ou acesse o site www.cvv.org.br. Em caso de
+        emergência, procure atendimento em um hospital mais próximo.
+      </p>
     </div>
   );
 }
