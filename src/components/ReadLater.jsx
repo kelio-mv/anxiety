@@ -5,7 +5,6 @@ function ReadLater() {
       <p className="text-blue-700">
         https://psiquiatriapaulista.com.br/17-dicas-de-como-controlar-a-ansiedade/
       </p>
-      <p>Diário / Encontre quais são os seus gatilhos para ansiedade</p>
       <p>Autoconhecimento / Procure entender seus pensamentos e sentimento</p>
       <p>Autoconhecimento / Desconfie de seus pensamentos negativos</p>
       <p>10. Encontre um hobby ou uma atividade prazerosa</p>
@@ -14,7 +13,7 @@ function ReadLater() {
       <p>Alimente pensamentos bons</p>
       <p>Seja mais sociável</p>
       <p>Mude a perspectiva</p>
-      <p>Você pode tomar um chá, fazer uma leitura leve</p>
+      <p>Sono / Você pode tomar um chá, fazer uma leitura leve</p>
       <p className="text-blue-700">
         https://www.unimedcampinas.com.br/blog/saude-emocional/crise-de-ansiedade-veja-dicas-de-como-agir-para-aliviar-os-sintomas
       </p>
