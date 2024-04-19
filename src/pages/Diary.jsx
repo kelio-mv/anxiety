@@ -63,7 +63,7 @@ function Note({ date, content, editNote, deleteNote }) {
   return (
     <div className="p-2 space-y-2 border border-gray-800 rounded-lg" key={date}>
       <div className="flex justify-between">
-        <span className="text-lg">{date}</span>
+        <span className="font-mono text-lg">{date}</span>
         <Icon name="delete" onClick={() => deleteNote(date)} />
       </div>
 
