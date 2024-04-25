@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Page from "../components/Page";
 
-function SoundAndMusic() {
+function Music() {
   const currentAudioRef = useRef();
 
   function handleAudioPlay(e) {
@@ -15,7 +15,7 @@ function SoundAndMusic() {
   }
 
   return (
-    <Page title="Som e Música" icon="headphones">
+    <Page title="Música" icon="headphones">
       <p>
         Uma música calma pode ajudar a reduzir o estresse e a promover uma sensação de bem-estar,
         graças à liberação da endorfina, um neurotransmissor capaz de melhorar o humor.
@@ -64,4 +64,4 @@ function Audio({ name, artist, albumCover, src, onPlay }) {
   );
 }
 
-export default SoundAndMusic;
+export default Music;

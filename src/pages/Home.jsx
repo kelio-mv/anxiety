@@ -7,7 +7,7 @@ function Home() {
     ["Relaxamento", "physical_therapy", "relaxation"],
     ["Meditação", "self_improvement", "meditation"],
     ["5-4-3-2-1", "mindfulness", "technique-5-4-3-2-1"],
-    ["Som e Música", "headphones", "sound-and-music"],
+    ["Música", "headphones", "music"],
     ["Exercício", "directions_run", "exercise"],
     ["Alimentação", "local_dining", "diet"],
     ["Sono", "bedtime", "sleep"],
