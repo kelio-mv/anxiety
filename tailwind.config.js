@@ -5,6 +5,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     fontSize: {
+      sm: ["0.875rem", "1.25rem"],
       base: ["1rem", "1.375rem"],
       lg: ["1.125rem", "1.5rem"],
       xl: ["1.25rem", "1.625rem"],
