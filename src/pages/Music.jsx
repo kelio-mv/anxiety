@@ -59,7 +59,12 @@ function Audio({ name, artist, albumCover, src, onPlay }) {
           <div className="text-gray-400">{artist}</div>
         </div>
       </div>
-      <audio className="w-full" src={src} controls onPlay={onPlay}></audio>
+      <audio
+        className="w-full h-10 [&::-webkit-media-controls-panel]:bg-gray-900"
+        src={src}
+        controls
+        onPlay={onPlay}
+      ></audio>
     </div>
   );
 }
