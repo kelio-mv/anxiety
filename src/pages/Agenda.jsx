@@ -38,7 +38,7 @@ function Agenda() {
             maxLength={40}
           />
           <button
-            className="p-[3px] bg-cyan-800 border border-cyan-700 rounded"
+            className="p-[3px] bg-sky-800 border border-sky-700 rounded"
             onClick={handleAddTask}
           >
             <Icon name="add" />
