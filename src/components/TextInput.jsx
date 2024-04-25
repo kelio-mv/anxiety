@@ -2,7 +2,7 @@ function TextInput({ className, ...props }) {
   return (
     <input
       type="text"
-      className={"px-[7px] py-1 bg-gray-800 border border-gray-700 rounded " + (className || "")}
+      className={"px-2 py-1.5 bg-gray-800 border border-gray-700 rounded " + (className || "")}
       {...props}
     />
   );

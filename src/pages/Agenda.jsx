@@ -27,7 +27,7 @@ function Agenda() {
       </p>
       <p>Anote aqui tudo que você precisa ou deseja fazer:</p>
 
-      <div className="space-y-1.5">
+      <div className="space-y-2">
         <div className="flex gap-2">
           <TextInput
             className="grow"
@@ -37,17 +37,14 @@ function Agenda() {
             onKeyDown={({ key }) => key === "Enter" && handleAddTask()}
             maxLength={40}
           />
-          <button
-            className="p-[3px] bg-sky-800 border border-sky-700 rounded"
-            onClick={handleAddTask}
-          >
+          <button className="w-9 bg-sky-800 border border-sky-700 rounded" onClick={handleAddTask}>
             <Icon name="add" />
           </button>
         </div>
 
         {tasks.map((task, index) => (
           <div
-            className="flex justify-between items-center pt-1.5 border-t border-gray-800"
+            className="flex justify-between items-center pt-2 border-t border-gray-800"
             key={index}
           >
             <span className="overflow-hidden text-ellipsis">{task}</span>
