@@ -21,7 +21,7 @@ function Home() {
       <div className="grid sm:grid-cols-2 gap-3">
         {items.map(([title, icon, to]) => (
           <Link
-            className="p-4 space-x-3 bg-gray-900 border border-gray-800 rounded-lg"
+            className="p-3.5 space-x-2.5 bg-gray-900 border border-gray-800 rounded-lg"
             key={title}
             to={to}
           >
