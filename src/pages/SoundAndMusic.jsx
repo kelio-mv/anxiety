@@ -19,50 +19,23 @@ function SoundAndMusic() {
         albumCover="https://cdn.pixabay.com/audio/2024/02/14/22-35-32-207_200x200.png"
         src="https://cdn.pixabay.com/download/audio/2024/02/14/audio_b9bc3934cc.mp3?filename=perfect-beauty-191271.mp3"
       />
+      <Audio
+        name="Deep Meditation"
+        artist="Grand_Project"
+        albumCover="https://cdn.pixabay.com/audio/2024/02/24/20-43-45-882_200x200.jpg"
+        src="https://cdn.pixabay.com/download/audio/2024/02/24/audio_1fe2d5f39b.mp3?filename=deep-meditation-192828.mp3"
+      />
+      <Audio
+        name="Meditation at the river yoga zen relaxation positive sleep music"
+        artist="AlanFrijns"
+        albumCover="https://cdn.pixabay.com/audio/2023/02/27/19-57-11-935_200x200.jpg"
+        src="https://cdn.pixabay.com/download/audio/2023/02/26/audio_4c182f7459.mp3?filename=meditation-at-the-river-yoga-zen-relaxation-positive-sleep-music-140641.mp3"
+      />
     </Page>
   );
 }
 
 function Audio({ name, artist, albumCover, src }) {
-  const [duration, setDuration] = useState(null);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useRef();
-  const remainingTime = Math.floor(duration) - Math.floor(currentTime);
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    const updateDuration = () => setDuration(audio.duration);
-    const updateCurrentTime = () => setCurrentTime(audio.currentTime);
-
-    audio.addEventListener("loadedmetadata", updateDuration);
-    audio.addEventListener("timeupdate", updateCurrentTime);
-    audio.addEventListener("ended", stop);
-
-    return () => {
-      audio.removeEventListener("loadedmetadata", updateDuration);
-      audio.removeEventListener("timeupdate", updateCurrentTime);
-      audio.removeEventListener("ended", stop);
-    };
-  });
-
-  function formatTime(seconds) {
-    const f = (n) => ("0" + n).slice(-2);
-    const m = Math.floor(seconds / 60);
-    const s = Math.floor(seconds % 60);
-    return f(m) + ":" + f(s);
-  }
-
-  function play() {
-    audioRef.current.play();
-    setPlaying(true);
-  }
-
-  function stop() {
-    audioRef.current.pause();
-    setPlaying(false);
-  }
-
   return (
     <div className="p-2 space-y-2 border border-gray-800 rounded-lg">
       <div className="flex items-center gap-x-4">
@@ -72,23 +45,7 @@ function Audio({ name, artist, albumCover, src }) {
           <div className="text-gray-400">{artist}</div>
         </div>
       </div>
-      <div className="flex items-center gap-x-2 p-2 bg-gray-900 rounded">
-        <Icon name={playing ? "pause" : "play_arrow"} onClick={playing ? stop : play} />
-        <span className="font-mono text-sm">
-          {formatTime(currentTime)}/{formatTime(remainingTime)}
-        </span>
-        <input
-          type="range"
-          className="w-full"
-          min="0"
-          max={duration}
-          value={currentTime}
-          onChange={(e) => {
-            audioRef.current.currentTime = e.target.value;
-          }}
-        />
-      </div>
-      <audio ref={audioRef} src={src} preload="metadata"></audio>
+      <audio className="w-full" src={src} controls></audio>
     </div>
   );
 }
