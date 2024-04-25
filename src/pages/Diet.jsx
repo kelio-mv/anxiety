@@ -24,8 +24,8 @@ function Diet() {
       </p>
       <p>
         Evitar o consumo dessas substâncias, assim como de estimulantes e industrializados é
-        importante para quem deseja tratar a ansiedade. Além disso, ter uma dieta saudável evita o
-        ganho de peso, promove uma melhor imunidade e o bem-estar.
+        importante para quem deseja tratar a ansiedade. Além disso, ter uma dieta saudável
+        desenvolve uma melhor imunidade e promove o bem-estar.
       </p>
 
       {!dietRecords.some(({ date }) => date === today) && (
