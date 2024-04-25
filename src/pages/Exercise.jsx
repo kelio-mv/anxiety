@@ -55,20 +55,19 @@ function Exercise() {
 
   return (
     <Page title="Exercício" icon="directions_run" flex>
-      <div className="max-w-[40rem] space-y-4">
-        <p>
-          As atividades físicas, principalmente os aeróbicos, liberam hormônios que promovem a
-          sensação de bem-estar e felicidade.
-        </p>
-        <p>
-          Caminhar por 30 minutos, cinco vezes por semana, por exemplo, pode ajudar a inibir as
-          crises de ansiedade.
-        </p>
-        <p>
-          Utilize o temporizador abaixo para acompanhar seu progresso na atividade e alcançar o
-          tempo desejado:
-        </p>
-      </div>
+      <p>
+        As atividades físicas, principalmente os aeróbicos, liberam hormônios que promovem a
+        sensação de bem-estar e felicidade.
+      </p>
+      <p>
+        Caminhar por 30 minutos, cinco vezes por semana, por exemplo, pode ajudar a inibir as crises
+        de ansiedade.
+      </p>
+      <p>
+        Utilize o temporizador abaixo para acompanhar seu progresso na atividade e alcançar o tempo
+        desejado:
+      </p>
+
       <div className="flex-center grow">
         <div className="grid gap-2">
           <button

@@ -18,17 +18,16 @@ function Diet() {
 
   return (
     <Page title="Alimentação" icon="local_dining">
-      <div className="max-w-[40rem] space-y-4">
-        <p>
-          Algumas subtâncias como a cafeína, o açúcar, a nicotina, o guaraná em pó e o chocolate
-          estimulam o desenvolvimento do quadro ansioso.
-        </p>
-        <p>
-          Evitar o consumo dessas substâncias, assim como de estimulantes e industrializados é
-          importante para quem deseja tratar a ansiedade. Além disso, ter uma dieta saudável evita o
-          ganho de peso, promove uma melhor imunidade e o bem-estar.
-        </p>
-      </div>
+      <p>
+        Algumas subtâncias como a cafeína, o açúcar, a nicotina, o guaraná em pó e o chocolate
+        estimulam o desenvolvimento do quadro ansioso.
+      </p>
+      <p>
+        Evitar o consumo dessas substâncias, assim como de estimulantes e industrializados é
+        importante para quem deseja tratar a ansiedade. Além disso, ter uma dieta saudável evita o
+        ganho de peso, promove uma melhor imunidade e o bem-estar.
+      </p>
+
       {!dietRecords.some(({ date }) => date === today) && (
         <>
           <p>Você se alimentou bem hoje?</p>
@@ -54,6 +53,7 @@ function Diet() {
           </div>
         </>
       )}
+
       {dietRecords.map(({ date, rating }) => (
         <div className="space-x-2" key={date}>
           <span

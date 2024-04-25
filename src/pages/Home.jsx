@@ -3,24 +3,28 @@ import Icon from "../components/Icon";
 
 function Home() {
   const items = [
-    ["Respiração", "air", "bg-green-700", "breathing"],
-    ["Relaxamento", "physical_therapy", "bg-emerald-700", "relaxation"],
-    ["Meditação", "self_improvement", "bg-teal-700", "meditation"],
-    ["5-4-3-2-1", "mindfulness", "bg-cyan-700", "technique-5-4-3-2-1"],
-    ["Som e Música", "headphones", "bg-sky-700", "sound-and-music"],
-    ["Exercício", "directions_run", "bg-blue-700", "exercise"],
-    ["Alimentação", "local_dining", "bg-indigo-700", "diet"],
-    ["Sono", "bedtime", "bg-violet-700", "sleep"],
-    ["Agenda", "checklist", "bg-purple-700", "agenda"],
-    ["Diário", "sticky_note_2", "bg-fuchsia-700", "diary"],
-    ["Terapia", "psychology", "bg-pink-700", "therapy"],
+    ["Respiração", "air", "breathing"],
+    ["Relaxamento", "physical_therapy", "relaxation"],
+    ["Meditação", "self_improvement", "meditation"],
+    ["5-4-3-2-1", "mindfulness", "technique-5-4-3-2-1"],
+    ["Som e Música", "headphones", "sound-and-music"],
+    ["Exercício", "directions_run", "exercise"],
+    ["Alimentação", "local_dining", "diet"],
+    ["Sono", "bedtime", "sleep"],
+    ["Agenda", "checklist", "agenda"],
+    ["Diário", "sticky_note_2", "diary"],
+    ["Terapia", "psychology", "therapy"],
   ];
 
   return (
     <div className="flex flex-col justify-between min-h-full gap-4">
       <div className="grid sm:grid-cols-2 gap-3">
-        {items.map(([title, icon, bg, to]) => (
-          <Link className={`p-4 ${bg} rounded-lg space-x-3`} key={title} to={to}>
+        {items.map(([title, icon, to]) => (
+          <Link
+            className="p-4 space-x-3 bg-gray-900 border border-gray-800 rounded-lg"
+            key={title}
+            to={to}
+          >
             <Icon name={icon} />
             <span className="text-xl align-middle">{title}</span>
           </Link>
