@@ -14,13 +14,17 @@ function Home() {
     ["Agenda", "checklist", "agenda"],
     ["Diário", "sticky_note_2", "diary"],
     ["Terapia", "psychology", "therapy"],
+    ["Referências", "quick_reference_all", "references"],
   ];
 
   return (
     <div className="flex flex-col min-h-full gap-4">
-      <div className="space-x-3">
-        <img className="inline w-8" src="app-logo.png" alt="app logo" />
-        <span className="text-2xl align-middle">Healthy Mind</span>
+      <div className="flex gap-x-3">
+        <img className="w-12" src="app-logo.png" alt="app logo" />
+        <div>
+          <div className="text-2xl/7">Healthy Mind</div>
+          <p className="text-base/5 text-gray-400">Dicas para aliviar sua ansiedade</p>
+        </div>
       </div>
       <hr />
       <div className="grid sm:grid-cols-2 gap-3">

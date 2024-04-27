@@ -11,6 +11,7 @@ import Sleep from "./pages/Sleep";
 import Agenda from "./pages/Agenda";
 import Diary from "./pages/Diary";
 import Therapy from "./pages/Therapy";
+import References from "./pages/References";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path="/agenda" element={<Agenda />} />
       <Route path="/diary" element={<Diary />} />
       <Route path="/therapy" element={<Therapy />} />
+      <Route path="/references" element={<References />} />
     </Routes>
   );
 }
