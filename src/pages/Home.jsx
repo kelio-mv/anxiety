@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
 
 function Home() {
-  const items = [
+  const links = [
     ["Respiração", "air", "breathing"],
     ["Relaxamento", "physical_therapy", "relaxation"],
     ["Meditação", "self_improvement", "meditation"],
@@ -17,12 +17,17 @@ function Home() {
   ];
 
   return (
-    <div className="flex flex-col justify-between min-h-full gap-4">
+    <div className="flex flex-col min-h-full gap-4">
+      <div className="space-x-3">
+        <img className="inline w-8" src="app-logo.png" alt="app logo" />
+        <span className="text-2xl align-middle">Healthy Mind</span>
+      </div>
+      <hr />
       <div className="grid sm:grid-cols-2 gap-3">
-        {items.map(([title, icon, to]) => (
+        {links.map(([title, icon, to]) => (
           <Link
             className="p-3.5 space-x-2.5 bg-gray-900 border border-gray-800 rounded-lg"
-            key={title}
+            key={to}
             to={to}
           >
             <Icon name={icon} />
@@ -30,7 +35,7 @@ function Home() {
           </Link>
         ))}
       </div>
-      <p className="text-gray-400 text-center">
+      <p className="mt-auto text-gray-400 text-center">
         Este site não oferece tratamento ou aconselhamento imediato para pessoas em crise suicida.
         Em caso de crise, ligue para 188 (CVV) ou acesse o site www.cvv.org.br. Em caso de
         emergência, procure atendimento em um hospital mais próximo.
