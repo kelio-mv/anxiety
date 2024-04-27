@@ -27,10 +27,10 @@ function Relaxation() {
         width="100%"
         src="https://www.youtube.com/embed/aTam6a_twPg?si=HuKDC8IoWRjorU5P"
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       />
     </Page>
   );
