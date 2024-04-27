@@ -16,7 +16,7 @@ function Relaxation() {
         Assista este vídeo para aprender a fazer essa técnica, ou se preferir, procure outros vídeos
         no{" "}
         <a
-          className="text-sky-400 underline text-nowrap"
+          className="text-sky-400 underline"
           href="https://www.youtube.com/results?search_query=relaxamento+muscular+progressivo+"
         >
           YouTube
