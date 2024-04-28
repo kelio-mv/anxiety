@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className="flex flex-col min-h-full gap-4">
       <div className="flex gap-x-3">
-        <img className="w-12" src="app-logo.png" alt="app logo" />
+        <img className="w-12" src="logo-192.png" alt="app logo" />
         <div>
           <div className="text-2xl/7">Healthy Mind</div>
           <p className="text-base/5 text-gray-400">Dicas para aliviar sua ansiedade</p>
