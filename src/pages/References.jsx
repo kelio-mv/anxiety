@@ -8,10 +8,10 @@ function References() {
         Sistemas da Unopar.
       </p>
       <p>
-        Todas as informações disponibilizadas neste site foram baseadas em artigos de profissionais
-        de saúde e estudos científicos.
+        Todas as informações apresentadas neste site foram baseadas em artigos de profissionais de
+        saúde e estudos científicos.
       </p>
-      <p>Referências utilizadas:</p>
+      <p>Referências:</p>
       <ul className="space-y-2 break-all *:before:content-['•_'] [&_a]:text-sky-400 [&_a]:underline">
         <li>
           <a href="https://summitsaude.estadao.com.br/saude-humanizada/7-tecnicas-para-controlar-a-ansiedade/">
@@ -56,6 +56,16 @@ function References() {
         <li>
           <a href="https://www.vittude.com/blog/tecnicas-de-relaxamento-para-ansiedade/">
             Técnicas de relaxamento para ansiedade: 8 dicas para aliviar crises - Blog Vittude
+          </a>
+        </li>
+        <li>
+          <a href="https://www.psicologoeterapia.com.br/blog/beneficios-de-escrever-um-diario-para-a-saude-mental/">
+            Os benefícios de manter um diário para a saúde mental
+          </a>
+        </li>
+        <li>
+          <a href="https://www.marceloparazzi.com.br/blog/ansiedade-e-terapia-cognitivo-comportamental-como-a-abordagem-auxilia-no-tratamento">
+            Ansiedade e Terapia Cognitivo-Comportamental: como a abordagem auxilia no tratamento
           </a>
         </li>
       </ul>
